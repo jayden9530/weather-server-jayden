@@ -16,7 +16,7 @@ async def get_weather_custom(latitude: float, longitude: float) -> str:
         longitude: 경도 (예: 126.97)
     """
     # 오픈소스 날씨 API 주소 (별도의 키 발급 없이 사용 가능)
-    url = f"https://api.open-meteo.com/v1/forecast?latitude={latitude}&longitude={longitude}"
+    url = f"https://api.open-meteo.com/v1/forecast?latitude={latitude}&longitude={longitude}&current=temperature_2m,wind_speed_10m&hourly=temperature_2m,relative_humidity_2m,wind_speed_10m"    
     
     # 비동기(Async) 방식으로 웹사이트에 접속하여 데이터 가져오기
     async with httpx.AsyncClient() as client:
